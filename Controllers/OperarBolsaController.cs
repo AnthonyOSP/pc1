@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using pc1.Models;
 
 namespace pc1.Controllers
 {
@@ -19,7 +20,18 @@ namespace pc1.Controllers
 
         public IActionResult Index()
         {
+            ViewData["listaOperaciones"] = new List<OperarBolsa>();
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Invertir(OperarBolsa operarbolsa)
+        {
+            List<OperarBolsa> listaOperaciones = new List<OperarBolsa>();
+            operarbolsa.CalcularOperacion();
+            listaOperaciones.Add(operarbolsa);
+            ViewData["listaOperaciones"] = listaOperaciones;
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
