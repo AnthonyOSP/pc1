@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Operar Bolsa";
+}
+
+<h1>Operar Bolsa</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="fechaOperacion">Fecha de Operación:</label>
+        <input type="date" id="fechaOperacion" name="fechaOperacion" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="instrumento">Instrumento:</label><br>
+        <input type="checkbox" id="sp" name="instrumento" value="S&P"> S&P<br>
+        <input type="checkbox" id="dowJones" name="instrumento" value="Down Jones"> Down Jones<br>
+        <input type="checkbox" id="bonosUS" name="instrumento" value="Bonos US"> Bonos US<br>
+    </div>
+    <div class="form-group">
+        <label for="montoAbonar">Monto a Abonar:</label>
+        <input type="number" id="montoAbonar" name="montoAbonar" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Invertir</button>
+</form>
